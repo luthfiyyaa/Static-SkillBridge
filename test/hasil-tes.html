@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasil Tes</title>
+    <style>
+        #result-page {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f6fb;
+            padding: 30px;
+            margin-top: 80px;
+        }
+
+        #result-page h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #result-page p {
+            font-size: 20px;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        #result-page strong {
+            color: #2e7d32;
+        }
+
+        #result-page a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6a1b9a;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        #result-page a:hover {
+            background-color: #4a148c;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div id="result-page">
+        <h1>Hasil Tes</h1>
+
+        <p>Jawaban Benar: <strong>8</strong> dari <strong>10</strong> soal</p>
+        <a href="../test/tests.html">← Kembali ke Kategori Tes</a>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('../components/navbar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

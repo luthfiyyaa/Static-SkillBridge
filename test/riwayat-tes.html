@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Riwayat Tes</title>
+    <style>
+        .history-container {
+            padding: 40px;
+            background: linear-gradient(to bottom right, #e3eefe, #f3f8ff);
+            min-height: 100vh;
+        }
+
+        .history-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .test-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .test-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .test-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .test-info h4 {
+            margin: 0;
+            font-size: 20px;
+            color: #2c3e50;
+        }
+
+        .test-info small {
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .test-score {
+            background-color: #1976d2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #888;
+            margin-top: 60px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Riwayat Tes</title>
+    <style>
+        .history-container {
+            padding: 40px;
+            background: linear-gradient(to bottom right, #e3eefe, #f3f8ff);
+            min-height: 100vh;
+        }
+
+        .history-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .test-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .test-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .test-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .test-info h4 {
+            margin: 0;
+            font-size: 20px;
+            color: #2c3e50;
+        }
+
+        .test-info small {
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .test-score {
+            background-color: #1976d2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #888;
+            margin-top: 60px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="history-container">
+        <h2 class="history-title">Riwayat Tes</h2>
+
+        <div class="container">
+
+            <!-- Contoh 1 -->
+            <div class="test-card">
+                <div class="test-info">
+                    <h4>Bahasa Inggris Dasar</h4>
+                    <small>Dikerjakan pada 10 Mei 2025, 14:30</small>
+                </div>
+                <div class="test-score">85</div>
+            </div>
+
+            <!-- Contoh 2 -->
+            <div class="test-card">
+                <div class="test-info">
+                    <h4>Logika Matematika</h4>
+                    <small>Dikerjakan pada 12 Mei 2025, 09:15</small>
+                </div>
+                <div class="test-score">90</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('../components/navbar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
