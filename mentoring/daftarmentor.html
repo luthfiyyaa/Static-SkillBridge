@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Mentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .page-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            color: #274c77;
+        }
+        
+        .filter-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 20px;
+        }
+        
+        .filter-section select,
+        .filter-section input[type="text"],
+        .filter-section button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .mentor-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            background-color: #efefef;
+            border-radius: 20px;
+            margin: 0 20px;
+        }
+        
+        .mentor-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .mentor-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .mentor-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        
+        .mentor-card h3 {
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+        
+        .mentor-card .rating {
+            font-size: 20px;
+            color: gold;
+            margin: 10px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            background-color: #6096ba;
+            color: white;
+            font-weight: bold;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #5085a8;
+        }
+        
+        .btn.secondary {
+            background-color: #4a6fa5;
+        }
+        
+        .btn.secondary:hover {
+            background-color: #3e5d93;
+        }
+        
+        .star {
+            font-size: 1.5rem;
+            color: #ccc;
+        }
+        
+        .star.filled {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="page-title">Daftar Mentor</div>
+    
+    <div class="mentor-container">
+        <!-- Mentor 1 -->
+        <div class="mentor-card">
+            <img src="https://via.placeholder.com/120x120/6096ba/ffffff?text=AM" alt="Foto Ahmad Malik">
+            <h3>Ahmad Malik</h3>
+            <p>Web Development</p>
+            <div class="rating">
+                ★★★★★
+            </div>
+            <a href="#" class="btn">Lihat Profil</a>
+            <a href="#" class="btn secondary">Ajukan Mentoring</a>
+        </div>
+        
+        <!-- Mentor 2 -->
+        <div class="mentor-card">
+            <img src="https://via.placeholder.com/120x120/4a6fa5/ffffff?text=SR" alt="Foto Sari Rahayu">
+            <h3>Sari Rahayu</h3>
+            <p>UI/UX Design</p>
+            <div class="rating">
+                ★★★★☆
+            </div>
+            <a href="#" class="btn">Lihat Profil</a>
+            <a href="#" class="btn secondary">Ajukan Mentoring</a>
+        </div>
+        
+        <!-- Mentor 3 -->
+        <div class="mentor-card">
+            <img src="https://via.placeholder.com/120x120/274c77/ffffff?text=BP" alt="Foto Budi Pratama">
+            <h3>Budi Pratama</h3>
+            <p>Data Science</p>
+            <div class="rating">
+                ★★★★★
+            </div>
+            <a href="#" class="btn">Lihat Profil</a>
+            <a href="#" class="btn secondary">Ajukan Mentoring</a>
+        </div>
+        
+        <!-- Mentor 4 -->
+        <div class="mentor-card">
+            <img src="https://via.placeholder.com/120x120/6096ba/ffffff?text=DN" alt="Foto Dewi Ningrum">
+            <h3>Dewi Ningrum</h3>
+            <p>Mobile Development</p>
+            <div class="rating">
+                ★★★★☆
+            </div>
+            <a href="#" class="btn">Lihat Profil</a>
+            <a href="#" class="btn secondary">Ajukan Mentoring</a>
+        </div>
+        
+        <!-- Mentor 5 -->
+        <div class="mentor-card">
+            <img src="https://via.placeholder.com/120x120/4a6fa5/ffffff?text=RH" alt="Foto Rizki Hidayat">
+            <h3>Rizki Hidayat</h3>
+            <p>Cybersecurity</p>
+            <div class="rating">
+                ★★★★★
+            </div>
+            <a href="#" class="btn">Lihat Profil</a>
+            <a href="#" class="btn secondary">Ajukan Mentoring</a>
+        </div>
+        
+        <!-- Mentor 6 -->
+        <div class="mentor-card">
+            <img src="https://via.placeholder.com/120x120/274c77/ffffff?text=LK" alt="Foto Lisa Kusuma">
+            <h3>Lisa Kusuma</h3>
+            <p>Digital Marketing</p>
+            <div class="rating">
+                ★★★★☆
+            </div>
+            <a href="#" class="btn">Lihat Profil</a>
+            <a href="#" class="btn secondary">Ajukan Mentoring</a>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('../components/navbar.html')
+           .then(res => res.text())
+           .then(data => {
+             document.getElementById('navbar-placeholder').innerHTML = data;
+           });
+     
+         fetch('../components/footer.html')
+           .then(res => res.text())
+           .then(data => {
+             document.getElementById('footer-placeholder').innerHTML = data;
+           });
+     </script>     
+    
+</body>
+</html>

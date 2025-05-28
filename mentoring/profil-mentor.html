@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Mentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #efefef;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .profile-container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .profile-container h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #274c77;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .profile-card {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            padding-bottom: 30px;
+        }
+        
+        .profile-image img {
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+            background-color: #ccc;
+            border: 2px solid #aaa;
+        }
+        
+        .profile-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .detail-row span {
+            color: #444;
+            font-weight: 500;
+        }
+        
+        .detail-row strong {
+            color: #000;
+        }
+        
+        .rating-stars {
+            color: gold;
+            font-size: 18px;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-card {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+            
+            .profile-container {
+                margin: 40px 20px;
+                padding: 15px;
+            }
+            
+            .profile-container h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="header"></div>
+    
+    <div class="profile-container">
+        <h1>Profil Mentor</h1>
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="https://via.placeholder.com/180x180/6096ba/ffffff?text=DR" alt="Foto Profil">
+            </div>
+            <div class="profile-details">
+                <div class="detail-row">
+                    <span>Nama Lengkap</span>
+                    <strong>Dr. Andi Rahman, M.Kom</strong>
+                </div>
+                <div class="detail-row">
+                    <span>Bidang Keahlian</span>
+                    <strong>Full Stack Web Development</strong>
+                </div>
+                <div class="detail-row">
+                    <span>Ketersediaan</span>
+                    <strong>Senin - Jumat (09:00 - 17:00)</strong>
+                </div>
+                <div class="detail-row">
+                    <span>Rating</span>
+                    <strong class="rating-stars">★★★★★</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('../components/navbar.html')
+           .then(res => res.text())
+           .then(data => {
+             document.getElementById('navbar-placeholder').innerHTML = data;
+           });
+     
+         fetch('../components/footer.html')
+           .then(res => res.text())
+           .then(data => {
+             document.getElementById('footer-placeholder').innerHTML = data;
+           });
+     </script>     
+</body>
+</html>
