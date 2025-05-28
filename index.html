@@ -6,180 +6,199 @@
     <link rel="stylesheet" href="styles.css"> <!-- jika punya file css eksternal -->
     <style>
         .hero {
-            background: rgb(195, 224, 255);
-            background-size: cover;
-            padding: 100px 20px;
-            text-align: center;
-            color: white;
-            position: relative;
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+        background: #274c77;
+        background-size: cover;
+        padding: 100px 20px;
+        text-align: center;
+        color: white;
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .hero h1{
-            font-size: 100px;
-        }
+    .hero h1 {
+        font-size: 100px;
+    }
 
-        .hero-buttons .btn {
-            padding: 10px 20px;
-            font-weight: bold;
-            border-radius: 8px;
-            background-color: #425CB8;
-            color: white;
-        }
+    .hero button, .hero a {
+        padding: 10px 20px;
+        font-weight: bold;
+        font-size: large;
+        border-radius: 8px;
+        background-color: #a3cef1;
+        color: #274c77;
+        text-decoration: none;
+        border: 0;
+    }
 
-        .scroll-target {
-            margin-top: 60px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-        }
+    .scroll-target {
+        margin-top: 20px;
+        margin-bottom: 110px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+    }
 
-        .features {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            gap: 24px;
-            max-width: 1200px;
-            position: relative;
-        }
+    .features {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        font-weight: 200;
+        gap: 24px;
+        max-width: 1500px;
+    }
 
-        .feature-box {
-            background-color: #eef2ff;
-            padding: 20px;
-            border-radius: 16px;
-            width: 240px;
-            text-align: left;
-            position: relative;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+    .feature-box {
+        background-color: #6096ba;
+        padding: 20px;
+        border-radius: 16px;
+        width: 240px;
+        text-align: left;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        color: #ffffff;
+    }
 
-        .feature-box:hover {
-            transform: translateY(-4px);
-            background-color: #dce4ff;
-        }
+    .feature-box:hover {
+        transform: translateY(-4px);
+        background-color: #79b3d9;
+    }
 
-        .feature-box strong {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.1rem;
-        }
+    .feature-box strong {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+    }
 
-        .feature-box strong::after {
-            content: '▼';
-            transition: transform 0.3s ease;
-        }
+    .feature-box strong::after {
+        content: '▼';
+        transition: transform 0.3s ease;
+    }
 
-        .feature-box.active strong::after {
-            content: '▲';
-        }
+    .feature-box.active strong::after {
+        content: '▲';
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-            padding: 16px;
-            z-index: 99;
-        }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 90%;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        padding: 16px;
+        z-index: 99;
+    }
 
-        .feature-box.active .dropdown-content {
-            display: block;
-        }
+    .feature-box.active .dropdown-content {
+        display: block;
+    }
 
-        .dropdown-content ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+    .dropdown-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-        .dropdown-content li {
-            margin-bottom: 10px;
-        }
+    .dropdown-content li {
+        margin-bottom: 10px;
+    }
 
-        .dropdown-content a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
+    .dropdown-content a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
 
-        .dropdown-content a:hover {
-            color: #3b82f6;
-        }
+    .dropdown-content a:hover {
+        color: #6096ba;
+    }
 
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
+    section {
+        padding: 60px 20px;
+        text-align: center;
+    }
 
-        .section-light {
-            background-color: #f5f8ff;
-        }
+    
+    .section-blue { 
+        background-color: #ffffff; 
+        padding: 60px 20px;
+    }
 
-        .section-white {
-            background-color: #ffffff;
-        }
+    .stat-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        text-align: center;
+    }
 
-        .section-blue {
-            background-color: #f0f4ff;
-        }
+    .stat-item {
+        font-size: 36px;
+        color: #3b82f6;
+        font-weight: bold;
+    }
 
-        .section-title {
-            font-size: 28px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
+    .stat-box {
+        min-width: 200px;
+    }
 
-        .section-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 16px;
-        }
 
-        .info-cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
-        }
+    .section-title {
+        font-size: 35px;
+        margin-bottom: 30px;
+        margin-top: 0;
+        font-weight: bold;
+        color: #274c77;
+    }
 
-        .info-card {
-            flex: 1;
-            min-width: 250px;
-        }
+    .section-content {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 16px;
+    }
 
-        .testi-card {
-            background: #eef2ff;
-            padding: 20px;
-            border-radius: 12px;
-            width: 300px;
-        }
+    .section-white { 
+        background-color: #ffffff; 
+        padding: 60px 20px;
+    }
 
-        .stat-item {
-            font-size: 36px;
-            color: #3b82f6;
-        }
+    .info-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
 
-        .footer {
-            background-color: #1e3a8a;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
+    .info-card {
+        flex: 1;
+        min-width: 250px;
+    }
 
+    .testi-card {
+        background: #eef2ff;
+        padding: 20px;
+        border-radius: 12px;
+        width: 300px;
+    }
+
+    .stat-item {
+        font-size: 36px;
+        color: #3b82f6;
+    }
     </style>
 </head>
 <body>
