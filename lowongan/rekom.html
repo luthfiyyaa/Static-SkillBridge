@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Lowongan Rekomendasi</title>
+    <style>
+        body {
+            background: #efefef;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            color: #274c77;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .lowongan-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.25rem auto;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .lowongan-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .info {
+            flex: 1;
+        }
+
+        .info .title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            color: #003459;
+        }
+
+        .info p {
+            margin: 0.2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .detail-btn {
+            align-self: flex-end;
+            background: #6096ba;
+            color: white;
+            padding: 0.6rem 1.4rem;
+            border-radius: 2rem;
+            border: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .detail-btn:hover {
+            background: #2d536c;
+        }
+
+        @media (min-width: 600px) {
+            .lowongan-card {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .detail-btn {
+                margin-left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="header">Lowongan Rekomendasi</div>
+
+    <div class="lowongan-card">
+        <div class="info">
+            <p class="title">Frontend Developer</p>
+            <p>PT Teknologi Digital</p>
+            <p>📍 Jakarta</p>
+            <p>💰 Rp 8.000.000</p>
+        </div>
+        <a href="detail-lowongan.html" class="detail-btn">Detail</a>
+    </div>
+
+    <div class="lowongan-card">
+        <div class="info">
+            <p class="title">Backend Developer</p>
+            <p>CV Inovasi Coding</p>
+            <p>📍 Bandung</p>
+            <p>💰 Rp 9.000.000</p>
+        </div>
+        <a href="detail-lowongan.html" class="detail-btn">Detail</a>
+    </div>
+
+    <div class="lowongan-card">
+        <div class="info">
+            <p class="title">UI/UX Designer</p>
+            <p>Startup Kreatif</p>
+            <p>📍 Yogyakarta</p>
+            <p>💰 Rp 7.000.000</p>
+        </div>
+        <a href="detail-lowongan.html" class="detail-btn">Detail</a>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+<script>
+   fetch('../components/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+
+    fetch('../components/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+</script>
+
+</body>
+</html>

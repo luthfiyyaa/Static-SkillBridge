@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Riwayat Lamaran Kerja</title>
+    <style>
+        body { 
+            background: #efefef; 
+            font-family: 'Poppins', sans-serif;
+        }
+        .riw-container { 
+            max-width: 900px; 
+            margin: auto; 
+            margin-top: 70px;
+            background: white; 
+            border-radius: 10px; 
+            padding: 30px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+        }
+        h2 { 
+            text-align: center; 
+            color: #274c77; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 20px; 
+        }
+        th, td { 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            text-align: center; 
+        }
+        th { 
+            background-color: #dce3f0; 
+        }
+        .badge { 
+            padding: 6px 10px; 
+            border-radius: 8px; 
+            color: white; 
+            font-size: 14px; 
+        }
+        .Diterima { 
+            background-color: #4caf50; 
+        }
+        .Proses { 
+            background-color: #6096ba; 
+        }
+        .Ditolak { 
+            background-color: #f44336; 
+        }
+        .btn-email { 
+            background-color: #6096ba; 
+            color: white; 
+            border: none; 
+            padding: 6px 12px; 
+            border-radius: 8px; 
+            cursor: pointer; 
+        }
+        .btn-email:hover { 
+            background-color: #336180; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <div class="riw-container">
+        <h2>Riwayat Lamaran Kerja Anda</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Posisi</th>
+                    <th>Perusahaan</th>
+                    <th>Tanggal Lamar</th>
+                    <th>Status</th>
+                    <th>Hubungi Perusahaan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Contoh data statis -->
+                <tr>
+                    <td>Frontend Developer</td>
+                    <td>PT Teknologi Cerdas</td>
+                    <td>25 Mei 2025</td>
+                    <td><span class="badge Proses">Proses</span></td>
+                    <td><a href="mailto:hr@pt-teknologi-cerdas.com"><button class="btn-email">Kirim Email</button></a></td>
+                </tr>
+                <tr>
+                    <td>UI/UX Designer</td>
+                    <td>CV Desain Kreatif</td>
+                    <td>20 Mei 2025</td>
+                    <td><span class="badge Diterima">Diterima</span></td>
+                    <td><a href="mailto:hr@cv-desain-kreatif.com"><button class="btn-email">Kirim Email</button></a></td>
+                </tr>
+                <tr>
+                    <td>Backend Developer</td>
+                    <td>Inovasi Solusi</td>
+                    <td>18 Mei 2025</td>
+                    <td><span class="badge Ditolak">Ditolak</span></td>
+                    <td><a href="mailto:hr@inovasi-solusi.com"><button class="btn-email">Kirim Email</button></a></td>
+                </tr>
+                <!-- Tambahkan baris lain sesuai kebutuhan -->
+            </tbody>
+        </table>
+    </div>
+
+<div id="footer-placeholder"></div>
+
+<script>
+   fetch('../components/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+
+    fetch('../components/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+</script>
+</body>
+</html>

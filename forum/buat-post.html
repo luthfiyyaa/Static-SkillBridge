@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Buat Postingan</title>
+    <style>
+        body {
+            background-color: #efefef;
+            font-family: Poppins, sans-serif;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #274c77;
+        }
+
+        .form-box {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-box input[type="text"],
+        .form-box textarea {
+            width: 100%;
+            max-width: 600px;
+            padding: 0.75rem;
+            border: 1px solid #6096ba;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+
+        button[type="submit"] {
+            margin-top: 1.5rem;
+            background-color: #6096ba;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2a5572;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+<div class="container">
+    <h1>Buat Postingan</h1>
+    <form method="POST" action="submit_forum.html">
+        <!-- <input type="hidden" name="_token" value="csrf_token_dummy"> -->
+        <div class="form-box">
+            <input type="text" name="title" placeholder="Masukkan Judul" required>
+            <textarea name="content" placeholder="Isi Konten" rows="5" required></textarea>
+        </div>
+        <button type="submit">Kirim Postingan</button>
+    </form>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script>
+   fetch('../components/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+
+    fetch('../components/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <!-- Font Awesome (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #efefef;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .forum-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .forum-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #274c77;
+            text-shadow: 1px 1px 2px #aaa;
+            margin-bottom: 30px;
+        }
+        .search-filter {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .search-filter input,
+        .search-filter select {
+            padding: 10px 20px;
+            width: 250px;
+            border-radius: 30px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .btn-post {
+            background-color: #6096ba;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-post:hover {
+            background-color: #30668a;
+        }
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .post-card {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s;
+            display: block;
+        }
+        .post-card:hover {
+            transform: translateY(-3px);
+        }
+        .post-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .post-summary {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .post-date {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: #a1a1a1;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="forum-container">
+        <h1 class="forum-title">Forum</h1>
+        <a href="#" class="btn-post">buat postingan</a>
+        <div class="posts-grid">
+            <!-- Sample post 1 -->
+            <a href="#" class="post-card">
+                <div class="post-title">Tips Belajar Programming untuk Pemula</div>
+                <div class="post-summary">Berbagi pengalaman dan tips untuk teman-teman yang baru mulai belajar programming. Mari diskusi bersama...</div>
+                <div class="post-date">28/05/25</div>
+                <div class="icons">
+                    <i class="fa-regular fa-comment"></i>
+                </div>
+            </a>
+            
+            <!-- Sample post 2 -->
+            <a href="#" class="post-card">
+                <div class="post-title">Diskusi Framework Laravel vs CodeIgniter</div>
+                <div class="post-summary">Apa pendapat kalian tentang perbandingan kedua framework PHP ini? Mana yang lebih cocok untuk project...</div>
+                <div class="post-date">27/05/25</div>
+                <div class="icons">
+                    <i class="fa-regular fa-comment"></i>
+                </div>
+            </a>
+            
+            <!-- Sample post 3 -->
+            <a href="#" class="post-card">
+                <div class="post-title">Lowongan Kerja Developer Junior</div>
+                <div class="post-summary">Ada info lowongan kerja untuk fresh graduate jurusan IT. Requirements: HTML, CSS, JavaScript, PHP dasar...</div>
+                <div class="post-date">26/05/25</div>
+                <div class="icons">
+                    <i class="fa-regular fa-comment"></i>
+                </div>
+            </a>
+            
+            <!-- Sample post 4 -->
+            <a href="#" class="post-card">
+                <div class="post-title">Belajar Database MySQL</div>
+                <div class="post-summary">Sharing materi dan tutorial belajar MySQL dari dasar. Cocok untuk yang baru mulai belajar database...</div>
+                <div class="post-date">25/05/25</div>
+                <div class="icons">
+                    <i class="fa-regular fa-comment"></i>
+                </div>
+            </a>
+            
+            <!-- Sample post 5 -->
+            <a href="#" class="post-card">
+                <div class="post-title">Pengalaman Mengikuti Bootcamp Coding</div>
+                <div class="post-summary">Review pengalaman mengikuti bootcamp coding selama 3 bulan. Pro dan kontra yang perlu kalian tahu...</div>
+                <div class="post-date">24/05/25</div>
+                <div class="icons">
+                    <i class="fa-regular fa-comment"></i>
+                </div>
+            </a>
+            
+            <!-- Sample post 6 -->
+            <a href="#" class="post-card">
+                <div class="post-title">Tutorial Git dan GitHub untuk Pemula</div>
+                <div class="post-summary">Step by step tutorial menggunakan Git dan GitHub. Wajib dikuasai untuk semua developer modern...</div>
+                <div class="post-date">23/05/25</div>
+                <div class="icons">
+                    <i class="fa-regular fa-comment"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+       fetch('../components/navbar.html')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+          });
+        fetch('../components/footer.html')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+          });
+    </script>
+</body>
+</html>
