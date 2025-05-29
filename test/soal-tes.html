@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tes Coding</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #efefef;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tcontainer {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #274c77;
+        }
+
+        .question-box {
+            display: none;
+        }
+
+        .question-box.active {
+            display: block;
+        }
+
+        .code {
+            background: #0f172a;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+
+        .options label {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #b8e3ff;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .navigation {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            background-color: #6096ba;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #375f79;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="tcontainer">
+    <h1>Tes Coding</h1>
+    <form id="quizForm">
+        <!-- Soal 1 -->
+        <div class="question-box active">
+            <p>Perhatikan kode berikut ini:</p>
+            <div class="code">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello World";
+    return 0;
+}
+            </div>
+            <div class="options">
+                <label><input type="radio" name="answer0" value="a" required> Hello World</label>
+                <label><input type="radio" name="answer0" value="b"> Error</label>
+                <label><input type="radio" name="answer0" value="c"> HelloWorld</label>
+                <label><input type="radio" name="answer0" value="d"> Tidak ada output</label>
+            </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="question-box">
+            <p>Bahasa pemrograman yang digunakan untuk pengembangan web front-end:</p>
+            <div class="options">
+                <label><input type="radio" name="answer1" value="a" required> Python</label>
+                <label><input type="radio" name="answer1" value="b"> PHP</label>
+                <label><input type="radio" name="answer1" value="c"> JavaScript</label>
+                <label><input type="radio" name="answer1" value="d"> SQL</label>
+            </div>
+        </div>
+
+        <!-- Soal 3 -->
+        <div class="question-box">
+            <p>Manakah yang merupakan framework JavaScript?</p>
+            <div class="options">
+                <label><input type="radio" name="answer2" value="a" required> Laravel</label>
+                <label><input type="radio" name="answer2" value="b"> React</label>
+                <label><input type="radio" name="answer2" value="c"> Django</label>
+                <label><input type="radio" name="answer2" value="d"> Flask</label>
+            </div>
+        </div>
+
+        <!-- Soal 4 -->
+        <div class="question-box">
+            <p>SQL digunakan untuk:</p>
+            <div class="options">
+                <label><input type="radio" name="answer3" value="a" required> Mendesain UI</label>
+                <label><input type="radio" name="answer3" value="b"> Mengelola basis data</label>
+                <label><input type="radio" name="answer3" value="c"> Menjalankan server</label>
+                <label><input type="radio" name="answer3" value="d"> Membuat animasi</label>
+            </div>
+        </div>
+
+        <!-- Soal 5 -->
+        <div class="question-box">
+            <p>Apa fungsi utama dari HTML?</p>
+            <div class="options">
+                <label><input type="radio" name="answer4" value="a" required> Membuat backend website</label>
+                <label><input type="radio" name="answer4" value="b"> Mengatur database</label>
+                <label><input type="radio" name="answer4" value="c"> Menentukan struktur halaman web</label>
+                <label><input type="radio" name="answer4" value="d"> Mengatur jaringan</label>
+            </div>
+        </div>
+
+        <!-- Tombol Navigasi -->
+        <div class="navigation">
+            <button type="button" id="prevBtn">Previous</button>
+            <button type="button" id="nextBtn">Next</button>
+            <button type="submit" id="finishBtn" style="display: none;">Finish</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    const questionBoxes = document.querySelectorAll('.question-box');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const finishBtn = document.getElementById('finishBtn');
+    let currentIndex = 0;
+
+    function showQuestion(index) {
+        questionBoxes.forEach((box, i) => {
+            box.classList.toggle('active', i === index);
+        });
+        prevBtn.disabled = index === 0;
+        nextBtn.style.display = index === questionBoxes.length - 1 ? 'none' : 'inline-block';
+        finishBtn.style.display = index === questionBoxes.length - 1 ? 'inline-block' : 'none';
+    }
+
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < questionBoxes.length - 1) {
+            currentIndex++;
+            showQuestion(currentIndex);
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            showQuestion(currentIndex);
+        }
+    });
+
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Di sini bisa tambahkan logika kirim data / simpan lokal
+        window.location.href = "hasil-tes.html";
+    });
+
+    showQuestion(currentIndex);
+</script>
+
+</body>
+</html>
