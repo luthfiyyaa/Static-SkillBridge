@@ -53,7 +53,7 @@
     }
 
     .menu {
-      display: none;
+      flex-direction: column;
       position: absolute;
       top: 60px;
       right: 0;
@@ -62,8 +62,13 @@
       padding: 20px;
       box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.2);
       border-radius: 10px 0 0 10px;
-      flex-direction: column;
       z-index: 1000;
+      display: none; /* pastikan ada ini juga di akhir */
+    }
+
+
+    .menu.show {
+      display: flex;
     }
 
     .menu-button {
@@ -190,7 +195,7 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
-      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+      menu.classList.toggle("show");
     }
 
     function toggleSubmenu(button) {
@@ -218,7 +223,7 @@
       const menu = document.getElementById("menu");
       const hamburger = document.querySelector('.hamburger');
       if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-        menu.style.display = 'none';
+        menu.classList.remove("show");
         const buttons = document.querySelectorAll('.menu-button');
         buttons.forEach(btn => {
           btn.classList.remove("active");

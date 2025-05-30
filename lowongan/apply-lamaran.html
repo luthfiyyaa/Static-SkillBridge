@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <title>Form Lamaran</title>
     <style>
-        body { 
-            background: #f0f4fa; 
-            margin: 0; 
-            padding: 20px; 
-            font-family: Arial, sans-serif;
-        }
-        .container { 
+
+        .a-container { 
             max-width: 800px; 
-            margin: auto; 
+            height: 700px;
+            margin: 50px auto; 
             background: white; 
             border-radius: 10px; 
             padding: 30px; 
@@ -56,10 +52,10 @@
 
     <div id="navbar-placeholder"></div>
 
-    <div class="container">
+    <div class="a-container">
         <h2>Apply Lamaran</h2>
 
-        <form action="submit_lamaran.html" method="POST" enctype="multipart/form-data">
+        <form id="lamaran">
             <!-- <input type="hidden" name="_token" value="csrf_token_dummy"> -->
             <input type="hidden" name="lowongan_id" value="1">
 
@@ -90,6 +86,10 @@
 <div id="footer-placeholder"></div>
 
 <script>
+    document.getElementById('lamaran').addEventListener('submit', function(e) {
+        e.preventDefault(); // Mencegah reload
+        window.location.href = "/lowongan/riwayat-lamaran.html"; });
+
    fetch('../components/navbar.html')
       .then(res => res.text())
       .then(data => {

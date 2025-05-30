@@ -26,13 +26,6 @@
             font-weight: bold;
         }
         
-        #calendar {
-            background: lightyellow;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-            padding: 10px;
-            min-height: 500px; /* agar kalender pasti terlihat */
-        }
         
         .sesi-wrapper {
             max-width: 700px;
@@ -123,10 +116,6 @@
     <div class="container">
         <h1 class="title">Jadwal Mentoring</h1>
 
-        <!-- Uncomment jika mau pakai kalender -->
-        <!-- 
-        <div id="calendar"></div>
-        -->
 
         <div class="sesi-wrapper">
             <h3>Daftar Sesi</h3>
@@ -206,7 +195,7 @@
                 <div class="btn-wrapper">
                     <button type="submit" name="action" value="selesai" class="btn">Selesaikan Sesi</button>
                     <button type="submit" name="action" value="batal" class="btn">Batalkan Sesi</button>
-                    <button type="button" onclick="window.location.href='#'" class="btn">Review Mentoring</button>
+                    <button type="button" onclick="window.location.href='/mentoring/review.html'" class="btn">Review Mentoring</button>
                 </div>
             </form>
         </div>

@@ -81,7 +81,7 @@
 <div class="edit-container">
     <h1 class="edit-title">Edit Portofolio</h1>
 
-    <form action="submit_edit_porto.html" method="POST" enctype="multipart/form-data" class="edit-form">
+    <form id="portofolio" class="edit-form">
         <div class="form-row form-section">
             <input type="text" name="nama" placeholder="Nama Lengkap" value="John Doe" required>
             <input type="email" name="email" placeholder="Email" value="johndoe@example.com" required>
@@ -125,6 +125,11 @@
 <div id="footer-placeholder"></div>
 
 <script>
+
+    document.getElementById('portofolio').addEventListener('submit', function(e) {
+        e.preventDefault(); // Mencegah reload
+        window.location.href = "/portofolio/portofolio.html"; });
+
    fetch('../components/navbar.html')
       .then(res => res.text())
       .then(data => {

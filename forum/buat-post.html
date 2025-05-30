@@ -68,8 +68,7 @@
 
 <div class="container">
     <h1>Buat Postingan</h1>
-    <form method="POST" action="/forum/index.html">
-        <!-- <input type="hidden" name="_token" value="csrf_token_dummy"> -->
+    <form id="postingan">
         <div class="form-box">
             <input type="text" name="title" placeholder="Masukkan Judul" required>
             <textarea name="content" placeholder="Isi Konten" rows="5" required></textarea>
@@ -81,6 +80,10 @@
 <div id="footer-placeholder"></div>
 
 <script>
+    document.getElementById('postingan').addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah reload
+            window.location.href = "/forum/index.html"; 
+    });
    fetch('../components/navbar.html')
       .then(res => res.text())
       .then(data => {

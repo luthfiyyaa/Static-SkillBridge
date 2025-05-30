@@ -137,7 +137,7 @@
 
         <div class="komentar-section">
             <h4>Komentar</h4>
-            <form action="kirim_komentar.html" method="POST">
+            <form id="komentar">
                 <textarea name="isi" rows="3" placeholder="Tulis komentar..."></textarea>
                 <button type="submit" class="submit-btn">Kirim Komentar</button>
             </form>
@@ -162,6 +162,10 @@
     <div id="footer-placeholder"></div>
 
 <script>
+    document.getElementById('komentar').addEventListener('submit', function(e) {
+        e.preventDefault(); // Mencegah reload
+        window.location.href = "/forum/index.html"; });
+
    fetch('../components/navbar.html')
       .then(res => res.text())
       .then(data => {
