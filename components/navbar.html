@@ -10,6 +10,7 @@
       font-family: 'Poppins', sans-serif;
       background-color: #EFEFEF;
     }
+
     .navbar {
       display: flex;
       align-items: center;
@@ -20,37 +21,41 @@
       position: relative;
       z-index: 1001;
     }
+
     .navbar-left {
       display: flex;
       align-items: center;
       gap: 30px;
     }
+
     .logo img {
       width: 55px;
       height: auto;
     }
+
     .navbar-left img.icon {
       width: 20px;
       height: auto;
       cursor: pointer;
     }
+
     .hamburger {
       display: flex;
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
     }
+
     .hamburger div {
       width: 25px;
       height: 3px;
       background-color: #0C6AC1;
     }
 
-    /* Dropdown menu */
     .menu {
       display: none;
       position: absolute;
-      top: 60px; /* Below navbar */
+      top: 60px;
       right: 0;
       width: 250px;
       background-color: #fff;
@@ -60,6 +65,7 @@
       flex-direction: column;
       z-index: 1000;
     }
+
     .menu-button {
       background-color: #a3cef1;
       color: #274c77;
@@ -74,17 +80,21 @@
       user-select: none;
       transition: background-color 0.3s ease;
     }
+
     .menu-button:hover {
       background-color: #7fb3e6;
     }
+
     .submenu {
       display: none;
       padding-left: 15px;
       flex-direction: column;
     }
+
     .menu-button.active + .submenu {
       display: flex;
     }
+
     .menu-logout {
       background-color: #c10c1b;
       color: #ffffff;
@@ -104,16 +114,16 @@
   <div class="navbar">
     <div class="navbar-left">
       <div class="logo">
-        <img src="build/assets/logo-skillbridge.png" alt="Logo" />
+        <a href="../index.html"><img src="/assets/logo-skillbridge.png" alt="Logo" /></a>
       </div>
 
-      <a href="index.html">
-        <img src="build/assets/home.png" alt="Home" class="icon" />
+      <a href="../index.html">
+        <img src="/assets/home.png" alt="Home" class="icon" />
       </a>
 
       <div style="position: relative;">
-        <a href="notifikasi.html">
-          <img src="build/assets/notif.png" alt="Notifikasi" class="icon" />
+        <a href="../notifikasi.html">
+          <img src="/assets/notif.png" alt="Notifikasi" class="icon" />
         </a>
         <!-- Contoh badge notifikasi -->
         <span style="
@@ -126,14 +136,12 @@
           padding: 2px 6px;
           border-radius: 999px;
           font-weight: bold;
-          display: none; /* Kalau mau nampilin badge, ubah ke block */
-        ">3</span>
+        ">2</span>
       </div>
 
-      <!-- Login / Profil statis -->
-      <a href="login.html" style="display: flex; align-items: center; gap: 8px; color: #0C6AC1; font-weight: bold; text-decoration: none;">
-        <img src="build/assets/manusia.png" alt="Login" style="width: 20px; height: auto;" />
-        <span>Login</span>
+      <a href="../profil/edit-profil.html" style="display: flex; align-items: center; gap: 8px; color: #0C6AC1; font-weight: bold; text-decoration: none;">
+        <img src="/assets/manusia.png" alt="Profil" class="icon" />
+        <span>User</span>
       </a>
     </div>
 
@@ -182,12 +190,7 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
-      if (menu.style.display === "flex") {
-        menu.style.display = "none";
-        closeAllSubmenus();
-      } else {
-        menu.style.display = "flex";
-      }
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
     }
 
     function toggleSubmenu(button) {
@@ -210,27 +213,22 @@
       }
     }
 
-    function closeAllSubmenus() {
-      const allButtons = document.querySelectorAll('.menu-button');
-      allButtons.forEach(btn => {
-        btn.classList.remove("active");
-        const submenu = btn.nextElementSibling;
-        if (submenu && submenu.classList.contains("submenu")) {
-          submenu.style.display = "none";
-        }
-      });
-    }
-
-    // Tutup menu jika klik di luar menu atau hamburger
+    // Optional: Menutup menu jika klik di luar area menu
     document.addEventListener('click', function(event) {
       const menu = document.getElementById("menu");
       const hamburger = document.querySelector('.hamburger');
       if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
         menu.style.display = 'none';
-        closeAllSubmenus();
+        const buttons = document.querySelectorAll('.menu-button');
+        buttons.forEach(btn => {
+          btn.classList.remove("active");
+          const submenu = btn.nextElementSibling;
+          if (submenu && submenu.classList.contains("submenu")) {
+            submenu.style.display = "none";
+          }
+        });
       }
     });
   </script>
-
 </body>
 </html>

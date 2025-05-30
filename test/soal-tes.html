@@ -73,6 +73,7 @@
     </style>
 </head>
 <body>
+<div id="navbar-placeholder"></div>
 
 <div class="tcontainer">
     <h1>Tes Coding</h1>
@@ -81,13 +82,13 @@
         <div class="question-box active">
             <p>Perhatikan kode berikut ini:</p>
             <div class="code">
-#include &lt;iostream&gt;
-using namespace std;
+            #include &lt;iostream&gt;
+            using namespace std;
 
-int main() {
-    cout &lt;&lt; "Hello World";
-    return 0;
-}
+            int main() {
+                cout &lt;&lt; "Hello World";
+                return 0;
+            }
             </div>
             <div class="options">
                 <label><input type="radio" name="answer0" value="a" required> Hello World</label>
@@ -149,7 +150,9 @@ int main() {
         </div>
     </form>
 </div>
-
+<div id="footer-placeholder"></div>
+       
+    
 <script>
     const questionBoxes = document.querySelectorAll('.question-box');
     const prevBtn = document.getElementById('prevBtn');
@@ -187,6 +190,18 @@ int main() {
     });
 
     showQuestion(currentIndex);
+    
+    fetch('../components/navbar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
 </script>
 
 </body>

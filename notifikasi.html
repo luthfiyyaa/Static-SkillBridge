@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #efefef;
+        }
+
+        /* Navbar styling */
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .notif-container {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .notif-card {
+            border: none;
+            border-left: 5px solid rgb(163, 46, 46);
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .notif-card.read {
+            border-left-color: #198754;
+            background-color: #f9f9f9;
+        }
+
+        .notif-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .notif-message {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0.25rem 0;
+        }
+
+        .notif-time {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .btn-read {
+            font-size: 0.85rem;
+            padding: 0.4rem 0.75rem;
+            background-color: #6096ba;
+            border-radius: 20px;
+            color: #ffffff;
+            border: 1px solid #6096ba;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <div class="container notif-container">
+        <h2 class="mb-4 text-center text-primary">📩 Notifikasi Anda</h2>
+
+        <div class="notif-card">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="notif-title">Judul Notifikasi</div>
+                    <div class="notif-message">Ini adalah isi pesan dari notifikasi.</div>
+                    <div class="notif-time">2 jam yang lalu</div>
+                </div>
+                <div class="ms-3 text-end">
+                    <button class="btn btn-sm btn-primary btn-read">Tandai Sudah Dibaca</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contoh notifikasi sudah dibaca -->
+        <div class="notif-card read">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="notif-title">Judul Notifikasi Dibaca</div>
+                    <div class="notif-message">Pesan yang sudah dibaca sebelumnya.</div>
+                    <div class="notif-time">Kemarin</div>
+                </div>
+                <div class="ms-3 text-end">
+                    <span class="badge bg-success">Dibaca</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="footer-placeholder"></div>
+
+<script>
+    fetch('components/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+
+    fetch('components/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: #efefef;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            height: 117px;
+            background: #ffffff;
+            box-shadow: 0px 4px 250px rgba(0, 0, 0, 0.25);
+        }
+
+        .profile-container {
+            max-width: 900px;
+            height: auto;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 20px;
+        }
+
+        .profile-container h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #274c77;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .profile-card {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .profile-image img {
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+            background-color: #ccc;
+            border: 2px solid #aaa;
+        }
+
+        .profile-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .detail-row span {
+            color: #444;
+            font-weight: 500;
+        }
+
+        .detail-row strong {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <div class="profile-container">
+        <h1>Data Diri</h1>
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="assets/images/foto-profil.jpg" alt="Foto Profil">
+            </div>
+            <div class="profile-details">
+                <div class="detail-row">
+                    <span>Nama Lengkap</span>
+                    <strong>Nama Pengguna</strong>
+                </div>
+                <div class="detail-row">
+                    <span>Username</span>
+                    <strong>username123</strong>
+                </div>
+                <div class="detail-row">
+                    <span>Email</span>
+                    <strong>email@example.com</strong>
+                </div>
+                <div class="detail-row">
+                    <span>Jenis Kelamin</span>
+                    <strong>Laki-laki</strong>
+                </div>
+                <div class="detail-row">
+                    <span>Tanggal Lahir</span>
+                    <strong>2000-01-01</strong>
+                </div>
+                <div class="detail-row">
+                    <span>Nomor HP</span>
+                    <strong>08123456789</strong>
+                </div>
+                <div class="detail-row">
+                    <span>Institusi</span>
+                    <strong>Universitas Contoh</strong>
+                </div>
+                <div class="detail-row">
+                    <span>Bidang Minat</span>
+                    <strong>Teknologi Pendidikan</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('../components/navbar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
