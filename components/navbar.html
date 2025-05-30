@@ -1,4 +1,10 @@
-
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar dengan Hamburger</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -156,7 +162,8 @@
       visibility: visible;
     }
   </style>
-
+</head>
+<body>
 
   <div class="navbar">
     <div class="navbar-left">
@@ -189,14 +196,14 @@
       </a>
     </div>
 
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" id="hamburger">
       <div class="hamburger-line"></div>
       <div class="hamburger-line"></div>
       <div class="hamburger-line"></div>
     </div>
   </div>
 
-  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+  <div class="overlay" id="overlay"></div>
 
   <div class="menu" id="menu">
     <button class="menu-button" onclick="toggleSubmenu(this)">Tes Kesiapan Karir</button>
@@ -233,50 +240,7 @@
     <button class="menu-logout" onclick="logout()">Logout</button>
   </div>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      const overlay = document.getElementById("overlay");
-      menu.classList.toggle("show");
-      overlay.classList.toggle("show");
-    }
+  <script src="../components/navbar.js"></script>
 
-    function closeMenu() {
-      document.getElementById("menu").classList.remove("show");
-      document.getElementById("overlay").classList.remove("show");
-    }
-
-    function toggleSubmenu(button) {
-      const submenu = button.nextElementSibling;
-
-      document.querySelectorAll('.submenu').forEach(sub => {
-        if (sub !== submenu) {
-          sub.classList.remove('show');
-        }
-      });
-
-      submenu.classList.toggle('show');
-    }
-
-    function navigateTo(section) {
-      closeMenu();
-      alert(`Navigating to: ${section}`);
-    }
-
-    function logout() {
-      closeMenu();
-      if (confirm("Are you sure you want to logout?")) {
-        alert("Logged out successfully!");
-      }
-    }
-
-    // Tutup menu jika klik di luar
-    document.addEventListener('click', function(event) {
-      const menu = document.getElementById('menu');
-      const hamburger = document.getElementById('hamburger');
-      if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-        closeMenu();
-      }
-    });
-  </script>
-
+</body>
+</html>

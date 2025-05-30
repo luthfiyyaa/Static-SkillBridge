@@ -329,6 +329,8 @@
 
 <div id="footer-placeholder"></div>
 
+  <script src="../components/navbar.js"></script>
+
 <script>
     function toggleDropdown(clickedBox) {
         document.querySelectorAll('.feature-box').forEach(box => {
@@ -339,11 +341,17 @@
         clickedBox.classList.toggle('active');
     }
 
-    fetch('components/navbar.html')
-      .then(res => res.text())
-      .then(data => {
+    fetch('../components/navbar.html')
+    .then(res => res.text())
+    .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
-      });
+
+        // Setelah HTML dimuat, baru load JS-nya
+        const script = document.createElement('script');
+        script.src = '../components/navbar.js';
+        document.body.appendChild(script);
+    });
+
 
     fetch('components/footer.html')
       .then(res => res.text())
