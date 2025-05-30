@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notifikasi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
     <style>
         body {
             background-color: #efefef;
+        }
+
+        h2{
+            font-size: 2.25rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #274c77;
         }
 
         /* Navbar styling */
@@ -147,11 +155,16 @@
 <div id="footer-placeholder"></div>
 
 <script>
-    fetch('components/navbar.html')
-      .then(res => res.text())
-      .then(data => {
+    fetch('../components/navbar.html')
+    .then(res => res.text())
+    .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
-      });
+
+        // Setelah HTML dimuat, baru load JS-nya
+        const script = document.createElement('script');
+        script.src = '../components/navbar.js';
+        document.body.appendChild(script);
+    });
 
     fetch('components/footer.html')
       .then(res => res.text())

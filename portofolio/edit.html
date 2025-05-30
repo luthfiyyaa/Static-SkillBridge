@@ -131,10 +131,15 @@
         window.location.href = "/portofolio/portofolio.html"; });
 
    fetch('../components/navbar.html')
-      .then(res => res.text())
-      .then(data => {
+    .then(res => res.text())
+    .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
-      });
+
+        // Setelah HTML dimuat, baru load JS-nya
+        const script = document.createElement('script');
+        script.src = '../components/navbar.js';
+        document.body.appendChild(script);
+    });
 
    fetch('../components/footer.html')
       .then(res => res.text())

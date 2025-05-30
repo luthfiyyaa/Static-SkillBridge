@@ -90,7 +90,7 @@
     <div class="login-card">
         <div class="login-title">Log In!</div>
 
-        <form class="login-form" method="POST" action="#">
+        <form id="login" class="login-form">
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
 
@@ -111,11 +111,21 @@
     <div id="footer-placeholder"></div>
 
     <script>
+        document.getElementById('login').addEventListener('submit', function(e) {
+        e.preventDefault(); // Mencegah reload
+        window.location.href = "/index.html";
+        });
+        
         fetch('../components/navbar.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            });
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+
+            // Setelah HTML dimuat, baru load JS-nya
+            const script = document.createElement('script');
+            script.src = '../components/navbar.js';
+            document.body.appendChild(script);
+        });
 
         fetch('../components/footer.html')
             .then(res => res.text())
