@@ -4,112 +4,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Mentoring</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .title {
+        margin-bottom: 30px;
+        color: #274c77;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .sesi-wrapper {
+        max-width: 100%;
+        margin: 0 auto 40px auto;
+        padding: 40px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        overflow-x: auto;
+    }
+
+    .sesi-wrapper h3 {
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 1.2rem;
+    }
+
+    .sesi-wrapper table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 600px;
+    }
+
+    .sesi-wrapper table th,
+    .sesi-wrapper table td {
+        padding: 12px 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .sesi-wrapper table th {
+        background-color: #e3eefe;
+        font-weight: 600;
+        color: #425CB8;
+    }
+
+    .btn-wrapper {
+        margin-top: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 10px 22px;
+        background: #6096ba;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        flex: 1 1 150px;
+        max-width: 200px;
+        text-align: center;
+    }
+
+    .btn:hover {
+        background-color: #37617c;
+    }
+
+    .btn[type="button"] {
+        background-color: #6c757d;
+    }
+
+    .btn[type="button"]:hover {
+        background-color: #565e64;
+    }
+
+    .text-red {
+        color: red;
+        font-weight: 600;
+    }
+
+    input[type="radio"] {
+        cursor: pointer;
+    }
+
+    a {
+        color: #6096ba;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .title {
+            font-size: 1.5rem;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+
+        .sesi-wrapper {
             padding: 20px;
         }
-        
-        .title {
-            margin-bottom: 30px;
-            color: #274c77;
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-        
-        
-        .sesi-wrapper {
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            padding: 50px 70px;
-            background-color: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            font-family: Arial, sans-serif;
-        }
-        
+
         .sesi-wrapper h3 {
-            margin-bottom: 20px;
-            color: #333;
+            font-size: 1rem;
         }
-        
-        .sesi-wrapper table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .sesi-wrapper table th,
-        .sesi-wrapper table td {
-            padding: 12px 10px;
-            border: 1px solid #ccc;
-            text-align: left;
-            vertical-align: middle;
-        }
-        
-        .sesi-wrapper table th {
-            background-color: #e3eefe;
-            font-weight: 600;
-            color: #425CB8;
-        }
-        
-        .btn-wrapper {
-            margin-top: 25px;
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-        }
-        
+
         .btn {
-            padding: 10px 22px;
-            background: #6096ba;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 8px 16px;
         }
-        
-        .btn:hover {
-            background-color: #37617c;
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 10px;
         }
-        
-        .btn[type="button"] {
-            background-color: #6c757d;
+
+        .title {
+            font-size: 1.4rem;
         }
-        
-        .btn[type="button"]:hover {
-            background-color: #565e64;
+
+        .sesi-wrapper {
+            padding: 15px;
         }
-        
-        .text-red {
-            color: red;
-            font-weight: 600;
+
+        th, td {
+            font-size: 0.85rem;
+            padding: 8px;
         }
-        
-        input[type="radio"] {
-            cursor: pointer;
+
+        .btn {
+            font-size: 0.9rem;
+            padding: 10px;
+            margin-bottom: 8px;
         }
-        
-        a {
-            color: #6096ba;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    }
+</style>
+
 </head>
 <body>
     <div id="navbar-placeholder"></div>

@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Buat Postingan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #efefef;
             font-family: Poppins, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -32,14 +39,12 @@
             flex-direction: column;
             gap: 1rem;
             align-items: center;
-            width: 500px;
-            margin: 0 auto;
+            width: 100%;
         }
 
         .form-box input[type="text"],
         .form-box textarea {
             width: 100%;
-            max-width: 600px;
             padding: 0.75rem;
             border: 1px solid #6096ba;
             border-radius: 0.5rem;
@@ -61,11 +66,31 @@
         button[type="submit"]:hover {
             background-color: #2a5572;
         }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+                margin-bottom: 80px;
+            }
+
+            .form-box {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button[type="submit"] {
+                width: 100%;
+                padding: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div id="navbar-placeholder"></div>
+<div id="navbar-placeholder"></div>
 
 <div class="container">
     <h1>Buat Postingan</h1>
@@ -82,25 +107,26 @@
 
 <script>
     document.getElementById('postingan').addEventListener('submit', function(e) {
-            e.preventDefault(); // Mencegah reload
-            window.location.href = "/forum/index.html"; 
+        e.preventDefault(); // Mencegah reload
+        window.location.href = "/forum/index.html"; 
     });
-   fetch('../components/navbar.html')
-    .then(res => res.text())
-    .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
 
-        // Setelah HTML dimuat, baru load JS-nya
-        const script = document.createElement('script');
-        script.src = '../components/navbar.js';
-        document.body.appendChild(script);
-    });
+    fetch('../components/navbar.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+
+            // Setelah HTML dimuat, baru load JS-nya
+            const script = document.createElement('script');
+            script.src = '../components/navbar.js';
+            document.body.appendChild(script);
+        });
 
     fetch('../components/footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-      });
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
 </script>
 </body>
 </html>

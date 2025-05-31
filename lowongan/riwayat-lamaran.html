@@ -3,53 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Riwayat Lamaran Kerja</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Penting untuk responsif -->
     <style>
         body { 
             background: #efefef; 
             font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
         }
+
         .riw-container { 
             max-width: 900px; 
-            margin: auto; 
-            margin-top: 70px;
-            margin-bottom: 225px;
+            margin: 70px auto 225px auto;
             background: white; 
             border-radius: 10px; 
             padding: 30px; 
             box-shadow: 0 0 10px rgba(0,0,0,0.1); 
         }
+
         h2 { 
             text-align: center; 
             color: #274c77; 
+            font-size: 24px;
         }
+
         table { 
             width: 100%; 
             border-collapse: collapse; 
             margin-top: 20px; 
         }
+
         th, td { 
             border: 1px solid #ccc; 
             padding: 10px; 
             text-align: center; 
+            font-size: 14px;
         }
+
         th { 
             background-color: #dce3f0; 
         }
+
         .badge { 
             padding: 6px 10px; 
             border-radius: 8px; 
             color: white; 
-            font-size: 14px; 
+            font-size: 13px; 
         }
-        .Diterima { 
-            background-color: #4caf50; 
-        }
-        .Proses { 
-            background-color: #6096ba; 
-        }
-        .Ditolak { 
-            background-color: #f44336; 
-        }
+
+        .Diterima { background-color: #4caf50; }
+        .Proses { background-color: #6096ba; }
+        .Ditolak { background-color: #f44336; }
+
         .btn-email { 
             background-color: #6096ba; 
             color: white; 
@@ -57,9 +62,52 @@
             padding: 6px 12px; 
             border-radius: 8px; 
             cursor: pointer; 
+            font-size: 13px;
         }
-        .btn-email:hover { 
-            background-color: #336180; 
+
+        .btn-email:hover { background-color: #336180; }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 768px) {
+            .riw-container {
+                padding: 20px;
+            }
+
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                padding: 10px;
+                background: #fafafa;
+            }
+
+            td {
+                text-align: left;
+                padding: 8px 10px;
+                position: relative;
+                font-size: 14px;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                display: block;
+                margin-bottom: 5px;
+                color: #274c77;
+            }
+
+            .btn-email {
+                width: 100%;
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
@@ -81,42 +129,44 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Contoh data statis -->
                 <tr>
-                    <td>Frontend Developer</td>
-                    <td>PT Teknologi Cerdas</td>
-                    <td>25 Mei 2025</td>
-                    <td><span class="badge Proses">Proses</span></td>
-                    <td><a href="mailto:hr@pt-teknologi-cerdas.com"><button class="btn-email">Kirim Email</button></a></td>
+                    <td data-label="Posisi">Frontend Developer</td>
+                    <td data-label="Perusahaan">PT Teknologi Cerdas</td>
+                    <td data-label="Tanggal Lamar">25 Mei 2025</td>
+                    <td data-label="Status"><span class="badge Proses">Proses</span></td>
+                    <td data-label="Hubungi Perusahaan">
+                        <a href="mailto:hr@pt-teknologi-cerdas.com"><button class="btn-email">Kirim Email</button></a>
+                    </td>
                 </tr>
                 <tr>
-                    <td>UI/UX Designer</td>
-                    <td>CV Desain Kreatif</td>
-                    <td>20 Mei 2025</td>
-                    <td><span class="badge Diterima">Diterima</span></td>
-                    <td><a href="mailto:hr@cv-desain-kreatif.com"><button class="btn-email">Kirim Email</button></a></td>
+                    <td data-label="Posisi">UI/UX Designer</td>
+                    <td data-label="Perusahaan">CV Desain Kreatif</td>
+                    <td data-label="Tanggal Lamar">20 Mei 2025</td>
+                    <td data-label="Status"><span class="badge Diterima">Diterima</span></td>
+                    <td data-label="Hubungi Perusahaan">
+                        <a href="mailto:hr@cv-desain-kreatif.com"><button class="btn-email">Kirim Email</button></a>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Backend Developer</td>
-                    <td>Inovasi Solusi</td>
-                    <td>18 Mei 2025</td>
-                    <td><span class="badge Ditolak">Ditolak</span></td>
-                    <td><a href="mailto:hr@inovasi-solusi.com"><button class="btn-email">Kirim Email</button></a></td>
+                    <td data-label="Posisi">Backend Developer</td>
+                    <td data-label="Perusahaan">Inovasi Solusi</td>
+                    <td data-label="Tanggal Lamar">18 Mei 2025</td>
+                    <td data-label="Status"><span class="badge Ditolak">Ditolak</span></td>
+                    <td data-label="Hubungi Perusahaan">
+                        <a href="mailto:hr@inovasi-solusi.com"><button class="btn-email">Kirim Email</button></a>
+                    </td>
                 </tr>
-                <!-- Tambahkan baris lain sesuai kebutuhan -->
             </tbody>
         </table>
     </div>
 
-<div id="footer-placeholder"></div>
+    <div id="footer-placeholder"></div>
 
 <script>
    fetch('../components/navbar.html')
     .then(res => res.text())
     .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
-
-        // Setelah HTML dimuat, baru load JS-nya
         const script = document.createElement('script');
         script.src = '../components/navbar.js';
         document.body.appendChild(script);
